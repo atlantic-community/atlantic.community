@@ -1,0 +1,129 @@
+---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex" />
+		<meta name="theme-color" content="#050505" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<title>Página no encontrada — The Atlantic Community</title>
+	</head>
+	<body>
+		<main>
+			<a class="wordmark" href="/" aria-label="The Atlantic Community — inicio">
+				<span>The Atlantic</span><span>Community</span>
+			</a>
+
+			<section>
+				<p class="code">404</p>
+				<h1>Esta página no existe.</h1>
+				<a class="home" href="/">Volver al inicio <span aria-hidden="true">↗</span></a>
+			</section>
+		</main>
+	</body>
+</html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(html) {
+		background: #050505;
+		color-scheme: dark;
+	}
+
+	:global(body) {
+		margin: 0;
+		background: #050505;
+		color: #f4f4f2;
+		font-family: 'IBM Plex Sans', sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	main {
+		display: grid;
+		min-height: 100svh;
+		place-items: center;
+		position: relative;
+		padding: clamp(1.5rem, 4vw, 3.75rem);
+	}
+
+	.wordmark {
+		position: absolute;
+		top: clamp(1.5rem, 4vw, 3.75rem);
+		left: clamp(1.5rem, 4vw, 3.75rem);
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+		font-weight: 500;
+		letter-spacing: -0.04em;
+		line-height: 0.98;
+		text-decoration: none;
+	}
+
+	.wordmark span {
+		display: block;
+	}
+
+	section {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.code,
+	h1 {
+		margin: 0;
+	}
+
+	.code,
+	.home {
+		position: absolute;
+		bottom: clamp(1.5rem, 4vw, 3.75rem);
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.75rem;
+	}
+
+	.code {
+		left: clamp(1.5rem, 4vw, 3.75rem);
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 5rem);
+		font-weight: 400;
+		letter-spacing: -0.05em;
+		line-height: 0.98;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.home {
+		right: clamp(1.5rem, 4vw, 3.75rem);
+		min-width: max-content;
+		text-decoration-color: #555;
+		text-underline-offset: 0.3em;
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: #a5a5a0;
+	}
+
+	a:focus-visible {
+		outline: 1px solid currentColor;
+		outline-offset: 0.35rem;
+	}
+
+</style>

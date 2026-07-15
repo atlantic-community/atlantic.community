@@ -1,17 +1,228 @@
 ---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-mono/500.css';
 
+const title = 'The Atlantic Community';
+const description =
+	'The Atlantic Community conecta talento, industria e investigación para liderar el ecosistema tecnológico del Atlántico desde A Coruña.';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL('/og-image-1.png', Astro.site);
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: title,
+	url: canonicalURL.href,
+	description,
+	email: 'team@atlantic.community',
+	location: {
+		'@type': 'Place',
+		name: 'A Coruña, Galicia, España',
+	},
+};
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="es">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#050505" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={title} />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={socialImageURL} />
+		<meta property="og:image:secure_url" content={socialImageURL} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta
+			property="og:image:alt"
+			content="The Atlantic Community — Liderando el ecosistema tech del Atlántico."
+		/>
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageURL} />
+		<meta
+			name="twitter:image:alt"
+			content="The Atlantic Community — Liderando el ecosistema tech del Atlántico."
+		/>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<title>{title}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main>
+			<header>
+				<h1><span>The Atlantic</span><span>Community</span></h1>
+				<p class="tagline">Liderando el ecosistema tech del Atlántico.</p>
+			</header>
+
+			<section aria-label="Sobre The Atlantic Community">
+				<div class="intro">
+					<p>
+						Somos un equipo de referentes de la comunidad tech gallega con más de 20 años
+						creando comunidades y organizando eventos nacionales e internacionales.
+					</p>
+					<p>
+						Trabajamos para conectar talento, industria e investigación y hacer de A Coruña
+						el punto de referencia del desarrollo tecnológico en el Atlántico.
+					</p>
+				</div>
+
+				<nav aria-label="Enlaces">
+					<a href="/atlantic-community-dossier.pdf" target="_blank" rel="noreferrer">
+						Ver dossier completo <span aria-hidden="true">↗</span>
+					</a>
+					<a href="mailto:team@atlantic.community">team@atlantic.community</a>
+				</nav>
+			</section>
+		</main>
 	</body>
 </html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(html) {
+		background: #050505;
+		color-scheme: dark;
+	}
+
+	:global(body) {
+		margin: 0;
+		background: #050505;
+		color: #f4f4f2;
+		font-family: 'IBM Plex Sans', sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	main {
+		display: flex;
+		min-height: 100svh;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: clamp(1.5rem, 4vw, 3.75rem);
+	}
+
+	header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+		font-weight: 500;
+		letter-spacing: -0.04em;
+		line-height: 0.98;
+	}
+
+	h1 span {
+		display: block;
+	}
+
+	.tagline {
+		max-width: 19rem;
+		margin: 0;
+		color: #a5a5a0;
+		font-size: 0.76rem;
+		line-height: 1.45;
+		text-align: right;
+	}
+
+	section {
+		display: grid;
+		grid-template-columns: minmax(0, 36rem) auto;
+		align-items: end;
+		justify-content: space-between;
+		gap: clamp(3rem, 10vw, 10rem);
+		padding-top: 8rem;
+	}
+
+	.intro {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.intro p {
+		margin: 0;
+		font-size: clamp(1.3rem, 2.25vw, 2.1rem);
+		letter-spacing: -0.035em;
+		line-height: 1.17;
+	}
+
+	nav {
+		display: flex;
+		min-width: max-content;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.8rem;
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.75rem;
+	}
+
+	a {
+		color: inherit;
+		text-decoration-color: #555;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.3em;
+		transition: color 160ms ease, text-decoration-color 160ms ease;
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: #a5a5a0;
+		text-decoration-color: #a5a5a0;
+	}
+
+	a:focus-visible {
+		outline: 1px solid currentColor;
+		outline-offset: 0.35rem;
+	}
+
+	@media (max-width: 720px) {
+		main {
+			min-height: 100svh;
+		}
+
+		header {
+			flex-direction: column;
+		}
+
+		.tagline {
+			text-align: left;
+		}
+
+		section {
+			grid-template-columns: 1fr;
+			align-items: start;
+			gap: 3rem;
+			padding-top: 6rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		a {
+			transition: none;
+		}
+	}
+</style>
