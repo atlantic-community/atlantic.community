@@ -5,5 +5,15 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "atlantic.community/*",
+      "zone_name": "atlantic.community"
+    },
+    {
+      "pattern": "www.atlantic.community/*",
+      "zone_name": "atlantic.community"
+    }
+  ]
 }
