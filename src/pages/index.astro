@@ -84,10 +84,20 @@ const structuredData = {
 				</div>
 
 				<nav aria-label="Enlaces">
-					<a href="/atlantic-community-dossier.pdf" target="_blank" rel="noreferrer">
-						Ver dossier institucional <span aria-hidden="true">↗</span>
-					</a>
-					<a href="mailto:team@atlantic.community">team@atlantic.community</a>
+					<div class="main-links">
+						<a
+							class="primary-link"
+							href="https://luma.com/atlantic.community"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Ver eventos <span aria-hidden="true">↗</span>
+						</a>
+						<a href="/atlantic-community-dossier.pdf" target="_blank" rel="noreferrer">
+							Dosier institucional <span aria-hidden="true">↗</span>
+						</a>
+					</div>
+					<a class="contact-link" href="mailto:team@atlantic.community">team@atlantic.community</a>
 				</nav>
 			</section>
 		</main>
@@ -175,9 +185,23 @@ const structuredData = {
 		min-width: max-content;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0.8rem;
+		gap: 1.8rem;
 		font-family: 'IBM Plex Mono', monospace;
 		font-size: 0.75rem;
+	}
+
+	.main-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+	}
+
+	.primary-link {
+		font-weight: 500;
+	}
+
+	.contact-link {
+		color: #a5a5a0;
 	}
 
 	a {
