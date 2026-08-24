@@ -97,7 +97,10 @@ const structuredData = {
 							Dosier institucional <span aria-hidden="true">↗</span>
 						</a>
 					</div>
-					<a class="contact-link" href="mailto:team@atlantic.community">team@atlantic.community</a>
+					<div class="meta-links">
+						<a class="contact-link" href="mailto:team@atlantic.community">team@atlantic.community</a>
+						<a class="contact-link" href="/legal">Aviso legal</a>
+					</div>
 				</nav>
 			</section>
 		</main>
@@ -198,6 +201,12 @@ const structuredData = {
 
 	.primary-link {
 		font-weight: 500;
+	}
+
+	.meta-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
 	}
 
 	.contact-link {
